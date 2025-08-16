@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VClipEngine - Legal Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 60px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1 { color: #111; }
+    a {
+      display: inline-block;
+      margin: 12px;
+      padding: 12px 20px;
+      background: #0073e6;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      background: #005bb5;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to VClipEngine Legal Center</h1>
+    <p>Here you can find our official Terms of Service and Privacy Policy.</p>
+    <a href="terms.html">📜 Terms of Service</a>
+    <a href="privacy.html">🔒 Privacy Policy</a>
+    <footer>
+      &copy; <span id="year"></span> VClipEngine. All Rights Reserved.
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
