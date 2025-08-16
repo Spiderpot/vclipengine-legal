@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VClipEngine TikTok Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f9f9f9;
+    }
+    .step {
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 600px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: none;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      color: #fff;
+      background: #010101;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    pre {
+      text-align: left;
+      background: #222;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .caption {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    a { color: #0073e6; text-decoration: none; }
+  </style>
+  <script>
+    function simulateLogin() {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").style.display = "block";
+      document.getElementById("caption").innerText = "Step 2: User Authorizes via TikTok";
+
+      setTimeout(() => {
+        document.getElementById("step2").style.display = "none";
+        document.getElementById("step3").style.display = "block";
+        document.getElementById("caption").innerText = "Step 3: User redirected, profile data fetched";
+      }, 2500);
+    }
+
+    window.onload = () => {
+      document.getElementById("step1").style.display = "block";
+      document.getElementById("caption").innerText = "Step 1: Click 'Login with TikTok'";
+    };
+  </script>
+</head>
+<body>
+  <h1>VClipEngine TikTok Login Demo</h1>
+
+  <div id="step1" class="step">
+    <p>Click the login button below to sign in with TikTok</p>
+    <button onclick="simulateLogin()">Login with TikTok</button>
+  </div>
+
+  <div id="step2" class="step">
+    <p>TikTok Authorization Screen</p>
+    <img src="https://i.imgur.com/utIfi6d.png" alt="TikTok Consent Screen" width="350">
+    <p><em>(User clicks Authorize)</em></p>
+  </div>
+
+  <div id="step3" class="step">
+    <p>Redirected back with user info:</p>
+    <pre>{
+  "open_id": "1234567890",
+  "display_name": "Demo User",
+  "avatar": "https://example.com/avatar.jpg"
+}</pre>
+  </div>
+
+  <div id="caption" class="caption"></div>
+
+  <div class="footer">
+    <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </div>
+</body>
+</html>
